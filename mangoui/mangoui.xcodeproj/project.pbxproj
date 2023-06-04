@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12FB3DA52A2C5C5000AA7D4F /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB4A98D2A25C572006A7513 /* PacketTunnelProvider.swift */; };
 		CDB4A9772A25C46E006A7513 /* mangouiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB4A9762A25C46E006A7513 /* mangouiApp.swift */; };
 		CDB4A9792A25C46E006A7513 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB4A9782A25C46E006A7513 /* ContentView.swift */; };
 		CDB4A97B2A25C470006A7513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB4A97A2A25C470006A7513 /* Assets.xcassets */; };
@@ -610,6 +611,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12FB3DA52A2C5C5000AA7D4F /* PacketTunnelProvider.swift in Sources */,
 				CDB4AA322A25D2BB006A7513 /* MGNetworkModel.swift in Sources */,
 				CDB4AA312A25D17D006A7513 /* MGConfiguration+Log.swift in Sources */,
 				CDB4AA302A25D173006A7513 /* MGConfigurationPersistentViewModel.swift in Sources */,
@@ -640,6 +642,7 @@
 /* Begin XCBuildConfiguration section */
 		CDB4A97F2A25C470006A7513 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDB4AA202A25CCFC006A7513 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -777,7 +780,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "--APP-ID-";
+				PRODUCT_BUNDLE_IDENTIFIER = "${APP_ID}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -809,7 +812,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "--APP-ID-";
+				PRODUCT_BUNDLE_IDENTIFIER = "${APP_ID}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -834,7 +837,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.CodeAppVpn.XrayTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = "${APP_ID}.${TUNNEL_BUNDLE_SUFFIX_XRAY}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -860,7 +863,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.CodeAppVpn.XrayTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = "${APP_ID}.${TUNNEL_BUNDLE_SUFFIX_XRAY}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -907,7 +910,7 @@
 			repositoryURL = "https://github.com/daemooon/XrayKit.git";
 			requirement = {
 				kind = exactVersion;
-				version = 0.1.61;
+				version = 0.1.62;
 			};
 		};
 		CDB4A99B2A25C622006A7513 /* XCRemoteSwiftPackageReference "Tun2SocksKit" */ = {
