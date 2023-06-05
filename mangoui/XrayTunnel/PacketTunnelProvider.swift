@@ -21,36 +21,36 @@ class PacketTunnelProvider: NEPacketTunnelProvider, XrayClientProtocol, XrayOSLo
     override func startTunnel(options: [String : NSObject]? = nil) async throws {
         
         MGNotification.send(title: "", subtitle: "", body: "启动")
-        let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: "254.1.1.1")
-        settings.mtu = 9000
-        let netowrk = MGNetworkModel.current
-        settings.ipv4Settings = {
-            let settings = NEIPv4Settings(addresses: ["198.18.0.1"], subnetMasks: ["255.255.0.0"])
-            settings.includedRoutes = [NEIPv4Route.default()]
-            if netowrk.hideVPNIcon {
-                settings.excludedRoutes = [NEIPv4Route(destinationAddress: "0.0.0.0", subnetMask: "255.0.0.0")]
-            }
-            return settings
-        }()
-        settings.ipv6Settings = {
-            guard netowrk.ipv6Enabled else {
-                return nil
-            }
-            let settings = NEIPv6Settings(addresses: ["fd6e:a81b:704f:1211::1"], networkPrefixLengths: [64])
-            settings.includedRoutes = [NEIPv6Route.default()]
-            if netowrk.hideVPNIcon {
-                settings.excludedRoutes = [NEIPv6Route(destinationAddress: "::", networkPrefixLength: 128)]
-            }
-            return settings
-        }()
-        settings.dnsSettings = NEDNSSettings(servers: ["1.1.1.1"])
-        try await self.setTunnelNetworkSettings(settings)
-        do {
-            try self.run()
-        } catch {
-            MGNotification.send(title: "", subtitle: "", body: error.localizedDescription)
-            throw error
-        }
+//        let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: "254.1.1.1")
+//        settings.mtu = 9000
+//        let netowrk = MGNetworkModel.current
+//        settings.ipv4Settings = {
+//            let settings = NEIPv4Settings(addresses: ["198.18.0.1"], subnetMasks: ["255.255.0.0"])
+//            settings.includedRoutes = [NEIPv4Route.default()]
+//            if netowrk.hideVPNIcon {
+//                settings.excludedRoutes = [NEIPv4Route(destinationAddress: "0.0.0.0", subnetMask: "255.0.0.0")]
+//            }
+//            return settings
+//        }()
+//        settings.ipv6Settings = {
+//            guard netowrk.ipv6Enabled else {
+//                return nil
+//            }
+//            let settings = NEIPv6Settings(addresses: ["fd6e:a81b:704f:1211::1"], networkPrefixLengths: [64])
+//            settings.includedRoutes = [NEIPv6Route.default()]
+//            if netowrk.hideVPNIcon {
+//                settings.excludedRoutes = [NEIPv6Route(destinationAddress: "::", networkPrefixLength: 128)]
+//            }
+//            return settings
+//        }()
+//        settings.dnsSettings = NEDNSSettings(servers: ["1.1.1.1"])
+//        try await self.setTunnelNetworkSettings(settings)
+//        do {
+//            try self.run()
+//        } catch {
+//            MGNotification.send(title: "", subtitle: "", body: error.localizedDescription)
+//            throw error
+//        }
     }
     
     private func run() throws {
